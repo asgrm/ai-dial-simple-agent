@@ -17,8 +17,8 @@ task/
 ├── tools/                
 │   ├── base.py            ✅ Abstract base tool interface
 │   ├── web_search.py               🚧 TODO: implement all points described in TODO seactions
-│   └── user/                       🚧 TODO: implement all points described in TODO seactions
-│       ├── base.py                 🚧 TODO: implement all points described in TODO seactions
+│   └── user/                       
+│       ├── base.py                 ✅ Abstraction for user service related tools
 │       ├── create_user_tool.py     🚧 TODO: implement all points described in TODO seactions
 │       ├── update_user_tool.py     🚧 TODO: implement all points described in TODO seactions
 │       ├── delete_user_tool.py     🚧 TODO: implement all points described in TODO seactions
@@ -61,31 +61,7 @@ pip install -r requirements.txt
 3. **Add DIAL API Key as Environment Variable**
 4. **Run user service** (run `docker-compose.yml`)
 
-## 🔧 Configuration
-
-### Tool Configuration
-
-Tools are configured using OpenAI's function calling specification:
-
-```python
-TOOL_CONFIG = {
-    "type": "function",
-    "function": {
-        "name": "tool_name",
-        "description": "Tool description",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "param1": {
-                    "type": "string",
-                    "description": "Parameter description"
-                }
-            },
-            "required": ["param1"]
-        }
-    }
-}
-```
+### If the task in the main branch is hard for you, then switch to the `with-detailed-description` branch
 
 ## 🔍 API Reference
 
@@ -171,7 +147,7 @@ With tool calls
           }
         ]
       },
-      "finish_reason": "tool_calls" 
+      "finish_reason": "tool_calls"
     }
   ]
 }
@@ -186,7 +162,7 @@ Final response:
         "role": "assistant",
         "content": "Andrej Karpathy is..."
       },
-      "finish_reason": "stop" 
+      "finish_reason": "stop"
     }
   ]
 }
