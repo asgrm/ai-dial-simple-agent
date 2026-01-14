@@ -28,7 +28,7 @@ class CreateUserTool(BaseUserServiceTool):
         try:
             user_model = UserCreate.model_validate(arguments)
         # 2. Call user_client add user and return its results
-            self._user_client.add_user(user_model)
+            return self._user_client.add_user(user_model)
         except Exception as e:
         # 3. Optional: You can wrap it with `try-except` and return error as string `f"Error while creating a new user: {str(e)}"`
             print(e)

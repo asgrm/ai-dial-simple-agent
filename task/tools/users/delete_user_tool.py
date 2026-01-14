@@ -36,7 +36,7 @@ class DeleteUserTool(BaseUserServiceTool):
         # 1. Get int `id` from arguments
             id = int(arguments.get('id'))
         # 2. Call user_client delete_user and return its results
-            self._user_client.delete_user(id)
+            return self._user_client.delete_user(id)
         # 3. Optional: You can wrap it with `try-except` and return error as string `f"Error while deleting user by id: {str(e)}"`
         except Exception as e:
             return f"Error while deleting user by id: {str(e)}"

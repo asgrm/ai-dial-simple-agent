@@ -75,7 +75,7 @@ class DialClient:
         #   - Get `message` from `choice` and assign to `message_data` variable
                 message_data = choice.get("message", {})
         #   - Get `content` from `message` and assign to `content` variable
-                content = message_data.get("content", "")
+                content = message_data.get("content") or ""
         #   - Get `tool_calls` from `message` and assign to `tool_calls` variable
                 tool_calls = message_data.get("tool_calls")
         #   - Create `ai_response` Message (with AI role, `content` and `tool_calls`)
